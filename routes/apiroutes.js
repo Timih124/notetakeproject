@@ -1,6 +1,8 @@
 var db = require("../db/db.json")
 var fs = require("fs")
 
+
+// creating api route to connect db.json
 function apiroutes(app){
    app.get("/api/notes",function(req, res){
        res.json(db)
@@ -12,6 +14,8 @@ function apiroutes(app){
         res.json(db)  
     })
    })
+
+   // creating delete for app, if note is delted console will log succesfully deleted.
 
    app.delete("/api/notes:id", function(req, res){
        fs.readFile("./db/db.json", JSON.stringify(db), function (error){
